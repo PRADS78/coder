@@ -1,0 +1,71 @@
+/* App.css */
+
+/* General styling */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Styling for tables */
+.table-container {
+  width: 90%;
+  margin: 20px auto;
+  overflow-x: auto; /* Allow horizontal scroll on smaller screens */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color:  #000;
+}
+
+th {
+  background-color: #282c34;
+  color: white;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .table-container {
+    width: 100%; /* Full width on small screens */
+    overflow-x: auto; /* Enable horizontal scroll */
+  }
+}
