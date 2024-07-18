@@ -104,6 +104,26 @@ function App() {
     setIframeSrc('');
   };
 
+  const handleJoinSession = async(lecture) => {
+    try {
+      const payload = {
+        id_token: idToken,
+        session_id: lecture.session_id
+      };
+      const response = await fetch('https://heroes-dot-bosscoderplatformindia.el.r.appspot.com/v4_student/capture_attendance', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+    } catch (error) {
+      console.error('Error in marking attendance:', error);
+      window.alert('Error in marking attendance');
+    }
+    window.open(lecture.class_link, '_blank', 'noopener noreferrer');
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -130,9 +150,9 @@ function App() {
                         <td>{new Date(lecture.timestamp * 1000).toDateString()}</td>
                         <td>
                           {lecture.class_link ? (
-                            <a href={lecture.class_link} target="_blank" rel="noopener noreferrer">
+                            <button onClick={()=>handleJoinSession(lecture)}>
                               Join
-                            </a>
+                            </button>
                           ) : (
                             <button disabled>Join</button>
                           )}
