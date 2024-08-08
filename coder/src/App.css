@@ -31,10 +31,43 @@
   color: #61dafb;
 }
 
+/* Course title styling */
+.course-title {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #61dafb;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.course-title:hover {
+  color: #21a1f1;
+}
+
+/* Styling for course sections */
+.course-section {
+  margin-bottom: 10px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.course-content {
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.course-content.expanded {
+  display: block;
+}
+
 /* Styling for tables */
 .table-container {
   width: 90%;
-  margin: 20px auto;
+  margin: 10px auto;
   overflow-x: auto; /* Allow horizontal scroll on smaller screens */
 }
 
@@ -50,7 +83,7 @@ th, td {
   padding: 12px 15px;
   text-align: left;
   border-bottom: 1px solid #ddd;
-  color:  #000;
+  color: #000;
 }
 
 th {
