@@ -8,38 +8,10 @@ function App() {
   const [idToken, setIdToken] = useState('');
   const [expandedCourses, setExpandedCourses] = useState({});
 
-  const getToken = async () => {
-    try {
-      const auth = await fetch('https://bosscoderplatformindia.el.r.appspot.com/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: 'gpradeepk6@gmail.com',
-          password: 'XnCsHTUz',
-        }),
-      });
-
-      if (auth.ok) {
-        const resData = await auth.json();
-        setIdToken(resData.data.idToken);
-      } else {
-        throw new Error('Failed to authenticate');
-      }
-    } catch (error) {
-      console.error('Error fetching token:', error);
-      window.alert('Error fetching token');
-    }
-  };
-
   useEffect(() => {
     if (!idToken) {
       getToken();
     }
-  }, [idToken]);
-
-  useEffect(() => {
     const fetchCourses = async () => {
       try {
         if (idToken) {
@@ -65,6 +37,31 @@ function App() {
 
     fetchCourses();
   }, [idToken]);
+
+  const getToken = async () => {
+    try {
+      const auth = await fetch('https://bosscoderplatformindia.el.r.appspot.com/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: 'gpradeepk6@gmail.com',
+          password: 'XnCsHTUz',
+        }),
+      });
+
+      if (auth.ok) {
+        const resData = await auth.json();
+        setIdToken(resData.data.id_token);
+      } else {
+        throw new Error('Failed to authenticate');
+      }
+    } catch (error) {
+      console.error('Error fetching token:', error);
+      window.alert('Error fetching token');
+    }
+  };
 
   const handleViewClick = async (sessionId) => {
     const payload = {
