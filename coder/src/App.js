@@ -15,7 +15,7 @@ function App() {
     const fetchCourses = async () => {
       try {
         if (idToken) {
-          const response = await fetch('https://heroes-dot-bosscoderplatformindia.el.r.appspot.com/v4_student/get_course', {
+          const response = await fetch('https://backend-flask-dot-bosscoderplatformindia.el.r.appspot.com/v4_student/get_course', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ function App() {
     };
 
     try {
-      const response = await fetch('https://heroes-dot-bosscoderplatformindia.el.r.appspot.com/v4_student/get_class_details', {
+      const response = await fetch('https://backend-flask-dot-bosscoderplatformindia.el.r.appspot.com/v4_student/get_class_details', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -105,7 +105,7 @@ function App() {
         id_token: idToken,
         session_id: lecture.session_id,
       };
-      await fetch('https://heroes-dot-bosscoderplatformindia.el.r.appspot.com/v4_student/capture_attendance', {
+      await fetch('https://backend-flask-dot-bosscoderplatformindia.el.r.appspot.com/v4_student/capture_attendance', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
