@@ -40,7 +40,7 @@ function App() {
 
   const getToken = async () => {
     try {
-      const auth = await fetch('https://bosscoderplatformindia.el.r.appspot.com/login', {
+      const auth = await fetch('https://backend-node-dot-bosscoderplatformindia.el.r.appspot.com/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
