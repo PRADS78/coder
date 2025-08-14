@@ -1,0 +1,319 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "name": "Dynamic Form Configuration",
+    "description": "Configuration for form builder - update this to add/remove fields",
+    "lastUpdated": "2024-01-15T10:00:00Z"
+  },
+  "theme": {
+    "primaryColor": "#4F46E5",
+    "secondaryColor": "#7C3AED",
+    "fontFamily": "Inter, sans-serif"
+  },
+  "fields": [
+    {
+      "type": "short-text",
+      "label": "Short Text",
+      "icon": "📝",
+      "category": "input",
+      "description": "Single line text input",
+      "component": {
+        "component": "Input",
+        "propMapping": {
+          "value": "value",
+          "onChange": "onChange",
+          "placeholder": "placeholder",
+          "disabled": "disabled",
+          "required": "required"
+        },
+        "defaultProps": {
+          "type": "text"
+        }
+      },
+      "defaultProperties": {
+        "placeholder": "Enter text",
+        "maxLength": 255
+      },
+      "validation": {
+        "maxLength": 255
+      }
+    },
+    {
+      "type": "long-text",
+      "label": "Long Text",
+      "icon": "📄",
+      "category": "input",
+      "description": "Multi-line text area",
+      "component": {
+        "component": "Textarea",
+        "propMapping": {
+          "value": "content",
+          "onChange": "onContentChange",
+          "placeholder": "placeholder",
+          "disabled": "disabled",
+          "rows": "rows"
+        }
+      },
+      "defaultProperties": {
+        "placeholder": "Enter detailed text",
+        "rows": 4,
+        "maxLength": 2000
+      },
+      "validation": {
+        "maxLength": 2000
+      }
+    },
+    {
+      "type": "file-upload",
+      "label": "File Upload",
+      "icon": "📎",
+      "category": "input",
+      "description": "File upload with 2MB limit",
+      "component": {
+        "component": "FileUpload",
+        "propMapping": {
+          "onFileSelect": "onChange",
+          "acceptedTypes": "accept",
+          "maxSize": "maxFileSize",
+          "disabled": "disabled"
+        },
+        "defaultProps": {
+          "multiple": false
+        }
+      },
+      "defaultProperties": {
+        "acceptedTypes": [".pdf", ".doc", ".docx", ".jpg", ".jpeg", ".png"],
+        "maxSize": 2097152,
+        "multiple": false
+      },
+      "validation": {
+        "custom": "validateFileSize"
+      }
+    },
+    {
+      "type": "date-picker",
+      "label": "Date Picker",
+      "icon": "📅",
+      "category": "input",
+      "description": "Date selection field",
+      "component": {
+        "component": "DatePicker",
+        "propMapping": {
+          "value": "selectedDate",
+          "onChange": "onDateChange",
+          "placeholder": "placeholder",
+          "disabled": "disabled"
+        },
+        "defaultProps": {
+          "format": "MM/DD/YYYY"
+        }
+      },
+      "defaultProperties": {
+        "dateFormat": "MM/DD/YYYY",
+        "placeholder": "Select a date"
+      }
+    },
+    {
+      "type": "dropdown",
+      "label": "Dropdown",
+      "icon": "📋",
+      "category": "input",
+      "description": "Single or multiple choice selection",
+      "component": {
+        "component": "Select",
+        "propMapping": {
+          "value": "selectedValue",
+          "onChange": "onSelectionChange",
+          "options": "items",
+          "placeholder": "placeholder",
+          "disabled": "disabled",
+          "multiple": "allowMultiple"
+        }
+      },
+      "defaultProperties": {
+        "options": [
+          { "id": "1", "label": "Option 1", "value": "option1" },
+          { "id": "2", "label": "Option 2", "value": "option2" }
+        ],
+        "selectionType": "single",
+        "placeholder": "Select an option"
+      }
+    },
+    {
+      "type": "number",
+      "label": "Number",
+      "icon": "🔢",
+      "category": "input",
+      "description": "Numeric input field",
+      "component": {
+        "component": "NumberInput",
+        "propMapping": {
+          "value": "numericValue",
+          "onChange": "onValueChange",
+          "placeholder": "placeholder",
+          "min": "minValue",
+          "max": "maxValue",
+          "step": "stepSize",
+          "disabled": "disabled"
+        }
+      },
+      "defaultProperties": {
+        "placeholder": "Enter a number",
+        "min": 0,
+        "step": 1
+      },
+      "validation": {
+        "pattern": "^[0-9]+$"
+      }
+    },
+    {
+      "type": "email",
+      "label": "Email Address",
+      "icon": "📧",
+      "category": "input",
+      "description": "Email input with validation",
+      "component": {
+        "component": "EmailInput",
+        "propMapping": {
+          "value": "emailValue",
+          "onChange": "onEmailChange",
+          "placeholder": "placeholder",
+          "disabled": "disabled"
+        }
+      },
+      "defaultProperties": {
+        "placeholder": "Enter email address"
+      },
+      "validation": {
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+      }
+    },
+    {
+      "type": "phone",
+      "label": "Phone Number",
+      "icon": "📞",
+      "category": "input",
+      "description": "Phone number input",
+      "component": {
+        "component": "PhoneInput",
+        "propMapping": {
+          "value": "phoneValue",
+          "onChange": "onPhoneChange",
+          "placeholder": "placeholder",
+          "disabled": "disabled"
+        }
+      },
+      "defaultProperties": {
+        "placeholder": "Enter phone number"
+      },
+      "validation": {
+        "pattern": "^[+]?[1-9]?[0-9]{7,15}$"
+      }
+    },
+    {
+      "type": "rating",
+      "label": "Rating Scale",
+      "icon": "⭐",
+      "category": "input",
+      "description": "1-5 star rating",
+      "component": {
+        "component": "RatingInput",
+        "propMapping": {
+          "value": "rating",
+          "onChange": "onRatingChange",
+          "maxRating": "maxStars",
+          "disabled": "disabled"
+        }
+      },
+      "defaultProperties": {
+        "maxRating": 5,
+        "minRating": 1
+      }
+    },
+    {
+      "type": "checkbox-group",
+      "label": "Checkbox Group",
+      "icon": "☑️",
+      "category": "input",
+      "description": "Multiple checkboxes",
+      "component": {
+        "component": "CheckboxGroup",
+        "propMapping": {
+          "value": "selectedItems",
+          "onChange": "onSelectionChange",
+          "options": "checkboxOptions",
+          "disabled": "disabled"
+        }
+      },
+      "defaultProperties": {
+        "options": [
+          { "id": "1", "label": "Option 1", "value": "opt1" },
+          { "id": "2", "label": "Option 2", "value": "opt2" }
+        ]
+      }
+    },
+    {
+      "type": "udf-designation",
+      "label": "Designation",
+      "icon": "💼",
+      "category": "udf",
+      "description": "User's job title",
+      "component": {
+        "component": "Input",
+        "propMapping": {
+          "value": "value",
+          "disabled": "disabled",
+          "placeholder": "placeholder"
+        },
+        "defaultProps": {
+          "disabled": true
+        }
+      },
+      "defaultProperties": {
+        "placeholder": "Auto-filled from user data"
+      }
+    },
+    {
+      "type": "udf-department",
+      "label": "Department",
+      "icon": "🏢",
+      "category": "udf",
+      "description": "User's department",
+      "component": {
+        "component": "Input",
+        "propMapping": {
+          "value": "value",
+          "disabled": "disabled",
+          "placeholder": "placeholder"
+        },
+        "defaultProps": {
+          "disabled": true
+        }
+      },
+      "defaultProperties": {
+        "placeholder": "Auto-filled from user data"
+      }
+    },
+    {
+      "type": "udf-location",
+      "label": "Location",
+      "icon": "📍",
+      "category": "udf",
+      "description": "User's location",
+      "component": {
+        "component": "Input",
+        "propMapping": {
+          "value": "value",
+          "disabled": "disabled",
+          "placeholder": "placeholder"
+        },
+        "defaultProps": {
+          "disabled": true
+        }
+      },
+      "defaultProperties": {
+        "placeholder": "Auto-filled from user data"
+      }
+    }
+  ]
+}

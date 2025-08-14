@@ -1,0 +1,302 @@
+.fieldEditor {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background-color: white;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &.selected {
+    border-color: #4f46e5;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  &:not(.selected) {
+    opacity: 0.75;
+
+    &:hover {
+      border-color: #d1d5db;
+      opacity: 1;
+    }
+  }
+}
+
+.dragHandle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 0.5rem;
+  cursor: grab;
+  border-radius: 0.5rem 0.5rem 0 0;
+
+  &:hover {
+    background-color: #f3f4f6;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.dragIcon {
+  width: 1rem;
+  height: 1rem;
+  color: #9ca3af;
+}
+
+.fieldContent {
+  padding: 1rem;
+}
+
+.fieldLabel {
+  margin-bottom: 0.75rem;
+}
+
+.labelInput {
+  font-size: 1.125rem;
+  font-weight: 500;
+  border: none;
+  padding: 0;
+  background: transparent;
+
+  &:focus {
+    ring: 0;
+    outline: none;
+  }
+}
+
+.labelText {
+  font-size: 1.125rem;
+  font-weight: 500;
+  cursor: text;
+
+  &.selected {
+    color: #111827;
+  }
+
+  &:not(.selected) {
+    color: #6b7280;
+  }
+}
+
+.fieldDescription {
+  margin-bottom: 0.75rem;
+}
+
+.descriptionTextarea {
+  border: none;
+  padding: 0;
+  background: transparent;
+  resize: none;
+  font-size: 0.875rem;
+
+  &:focus {
+    ring: 0;
+    outline: none;
+  }
+}
+
+.descriptionText {
+  font-size: 0.875rem;
+  cursor: text;
+
+  &.selected {
+    color: #374151;
+  }
+
+  &:not(.selected) {
+    color: #6b7280;
+  }
+}
+
+.fieldPreview {
+  margin-bottom: 1rem;
+}
+
+.udfDisabledField {
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+}
+
+.udfMessage {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.fieldControls {
+  margin-bottom: 1rem;
+}
+
+.dateFormatContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.controlLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+.radioItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.radioLabel {
+  font-size: 0.875rem;
+}
+
+.dropdownOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.optionItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.optionDragHandle {
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.optionDragIcon {
+  width: 1rem;
+  height: 1rem;
+  color: #9ca3af;
+}
+
+.optionNumber {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.optionInput {
+  flex: 1;
+  height: 2rem;
+}
+
+.optionDeleteButton {
+  height: 2rem;
+  width: 2rem;
+  padding: 0;
+}
+
+.addOptionButton {
+  color: #2563eb;
+
+  &:hover {
+    color: #1d4ed8;
+  }
+}
+
+.fieldActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.actionButton {
+  height: 2rem;
+  font-size: 0.75rem;
+}
+
+.cloneButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.deleteButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #dc2626;
+
+  &:hover {
+    color: #b91c1c;
+  }
+}
+
+.toggleControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toggleItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggleLabel {
+  font-size: 0.75rem;
+}
+
+/* Preview field styles */
+.previewInput {
+  background-color: #f9fafb;
+}
+
+.previewTextarea {
+  background-color: #f9fafb;
+}
+
+.previewSelect {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  background-color: #f9fafb;
+}
+
+.previewSelectText {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.fileUploadPreview {
+  border: 2px dashed #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #f9fafb;
+}
+
+.fileUploadText {
+  color: #6b7280;
+  font-size: 0.875rem;
+}

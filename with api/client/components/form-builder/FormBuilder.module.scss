@@ -1,0 +1,146 @@
+.formBuilder {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+}
+
+.header {
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 1.5rem;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brandSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brandIcon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brandText {
+  font-weight: 600;
+  color: #111827;
+}
+
+.breadcrumbSeparator {
+  color: #9ca3af;
+}
+
+.breadcrumbText {
+  color: #6b7280;
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.saveButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publishButton {
+  background-color: #4f46e5;
+
+  &:hover {
+    background-color: #4338ca;
+  }
+}
+
+.tabsSection {
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 1.5rem;
+}
+
+.tabsList {
+  display: grid;
+  width: fit-content;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #f3f4f6;
+}
+
+.tabTrigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.tabContent {
+  flex: 1;
+  display: flex;
+  margin: 0;
+}
+
+.layoutContent {
+  flex: 1;
+  background-color: #f3f4f6;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.previewBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.previewContainer {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.bottomActions {
+  background-color: white;
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem 1.5rem;
+}
+
+.bottomContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.previewFormButton {
+  color: #2563eb;
+
+  &:hover {
+    color: #1d4ed8;
+  }
+}
+
+.bottomActionButtons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
